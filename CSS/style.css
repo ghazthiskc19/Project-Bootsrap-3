@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Space+Grotesk:wght@300;400&display=swap');
+@font-face{
+    font-family: ForNavbar;
+    src: url(../Font/Matahari/MatahariExtended-700ExtBold.woff) ,format('woff'); 
+}
+@font-face{
+    font-family: Forheading;
+    src: url(../Font/Aileron-Regular-webfont.woff) format("woff");
+}
+/* 
+font-family: 'Open Sans', sans-serif; --> Header Paragraf dan Footer
+font-family: 'Space Grotesk', sans-serif; --> Main paragraf
+font-family: ForNavbar; --> utk navbar
+font-family: ForHeading; --> utk heading
+
+*/
+
+/* GLOBAL STYLE AND CUSTOM STYLE */
+:root{
+    scroll-behavior: smooth;
+    --parallax-layer-1: -10;
+    --parallax-layer-2: -20;
+    --parallax-layer-3: -30;
+    --parallax-layer-4: -40;
+}
+p{
+    font-family: 'Open Sans', sans-serif;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a{
+    color: white;
+}
+/* CUSTOM STYLE */
+.text-mini{
+    font-size: 12px;
+}
+.margin-top-delete {
+    margin-top: 5px;
+}
+.margin-bottom-delete {
+    margin-bottom: 5px;
+}
+.text-indent{
+    text-indent: 40px;
+}
+/* Style */
+
+/* AWAL DARI HEADER */
+#carousel-gg{
+    z-index: var(--parallax-layer-4);
+    position: fixed;
+}
+img.carousel-item{
+    width: 100%; 
+    height: 100vh !important;
+    background-size: cover;
+}
+.carousel-wrap{
+    position: relative;
+    height: auto;
+}
+header{
+    position: relative;
+    height: 100vh;
+}
+.overlay-header{
+    padding-top: 150px;
+}
+.bg-dark.gg-gaming{
+    background-color: rgba(0,0,0,0.5);
+    height: auto;
+    padding: 20px;
+    color: white;
+    box-shadow: 10px 10px black;
+    transform: translate(-5px, -5px);
+    transition: all .3s;
+}
+.bg-dark.gg-gaming:hover{
+    box-shadow: 5px 5px black;
+    transform: translate(0, 0);
+}
+.header-h1{
+    font-family: ForHeading;
+    padding-bottom: 5px;
+}
+.header-h2{
+    font-family: 'Open Sans', sans-serif; 
+    font-style: italic;
+}
+.border-bottom{
+    border-bottom: 2px solid white;    
+}
+.p-header{
+    margin-top: 20px;
+}
+.btn-border{
+    border: 2px solid white;
+    color: white;
+    margin-top: 20px;
+    border-radius: 0 !important;
+    padding: 18px 48px;
+    transition: all .5s;
+    position: relative;
+    font-weight: bold;
+    z-index: 999 !important;
+}
+.block-effect{
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+    background: rgba(255, 255, 255, 1);
+    position: absolute;
+    top: 0;
+    transition: all .5s;
+    z-index: -1;
+}
+.block-effect-1{
+    left: 0;
+}
+.block-effect-2{
+    right: 0;
+}
+.btn-border:hover{
+    color: black !important;
+}
+.btn-border:active{
+    color: black;
+}
+.btn-border:focus{
+    color: black;
+}
+.btn-border:hover > .block-effect{
+    width: 100%;
+}
+
+/* AKHIR DARI HEADER */
+/* AWAL DARI NAVBAR */
+.navbar-default{
+    background: #9E502490 !important;
+    font-family: 'Space Grotesk', sans-serif;
+    border-color:#9E502490 !important;
+    font-size: 20px;
+    font-weight: bold;
+}
+.navbar-brand, .nav.navbar-nav li a, .nav.navbar-nav.navbar-right li a{
+    color: white !important;
+}
+.navbar-brand{
+    font-size: 25px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+span.icon-bar{
+    background-color: #fff !important;
+}
+.navbar-toggle:hover, .navbar-toggle:active, .navbar-toggle:focus{
+    background-color: #9E5024 !important;
+}
+.collapsing{
+    background-color: #9E5024;
+}
+.in{
+    background-color: #9E5024;
+}
+/* AKHIR DARI NAVBAR */
+
+/* AWAL DARI MAIN */
+
+main{
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(208,145,91,0.25) 16%, rgba(208,145,91,0.5) 23%, rgba(208,145,91,0.75) 36%, rgba(208,145,91,0.9) 58%, rgba(208,145,91,1) 100%);
+}
+/* AKHIR DARI MAIN */
+
+/* AWAL DARI ABOUT */
+#about{
+    padding: 50px 0;
+
+}
+
+.about-overlay{
+    background: rgba(0,0,0,0.5);
+    padding: 0 30px 30px 30px;
+    color: white;
+    box-shadow: 10px 10px black;
+    transform: translate(-5px, -5px);
+    transition: all .3s;
+}
+.about-overlay:hover{
+    box-shadow: 5px 5px black;
+    transform: translate(0, 0);
+}
+.about-ol{
+    counter-reset: ulang;
+}
+.about-li{
+    list-style: none;
+    line-height: 20px;
+}
+.about-li::before{
+    content: counter(ulang);
+    counter-increment: ulang;
+    width: 2em;
+    height: 2em;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #863f15;
+    box-shadow: 2px 2px  #50250d;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    margin: 5px 10px 5px 0;
+    font-size: 15px;
+}
+/* AWAL DARI ABOUT */
