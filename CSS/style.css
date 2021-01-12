@@ -54,14 +54,17 @@ a{
     z-index: var(--parallax-layer-4);
     position: fixed;
 }
-img.carousel-item{
+img.carousel-item, .open-hp{
     width: 100%; 
     height: 100vh !important;
-    background-size: cover;
+    /* background-size: cover; */
 }
 .carousel-wrap{
     position: relative;
     height: auto;
+}
+.open-hp{
+    display: none;
 }
 header{
     position: relative;
@@ -219,3 +222,14 @@ main{
     font-size: 15px;
 }
 /* AWAL DARI ABOUT */
+
+
+/* Media Queries */
+@media only screen and (max-width:800px){
+    .open-hp{
+        display: block !important;
+    }
+    .carousel-item{
+        display: none !important;
+    }
+}
