@@ -47,6 +47,9 @@ a{
 .text-indent{
     text-indent: 40px;
 }
+.text-white{
+    color: white;
+}
 /* Style */
 
 /* AWAL DARI HEADER */
@@ -184,7 +187,6 @@ main{
     padding: 50px 0;
 
 }
-
 .about-overlay{
     background: rgba(0,0,0,0.5);
     padding: 0 30px 30px 30px;
@@ -221,11 +223,84 @@ main{
     margin: 5px 10px 5px 0;
     font-size: 15px;
 }
-/* AWAL DARI ABOUT */
-
+/* akhir DARI ABOUT */
+/* awal pohon */
+.pohon{
+    /* height: 635px; */
+    display: grid;
+    justify-items: center;
+}
+.pohon-overlay{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(2, 1fr);
+    background: rgba(0,0,0,0.5);
+    padding: 30px;
+    box-shadow: 10px 10px black;
+    transform: translate(-5px, -5px);
+    transition: all .3s;
+}
+.pohon-overlay:hover{
+    box-shadow: 5px 5px black;
+    transform: translate(0, 0);
+}
+.img1, .img2, .img3{
+    width: 100%;
+    height: 100%;
+} 
+.img1{
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+}
+.img2{
+    grid-row: 1 / 3;
+    grid-column: 2 / 3;
+}
+.img3{
+    grid-row: 3 / 4;
+    grid-column: 1 / 3;
+}
+.pohon-text{
+    grid-row: 2 / 3;
+    grid-column: 1 / 2 ;
+    color: white;
+    background: rgba(0,0,0,0.5);
+    margin: 15px 15px 15px 0;
+    border-radius: 5px;
+    box-shadow: 10px 10px black;
+    transform: translate(-5px, -5px);
+    transition: all .3s;
+}
+.pohon-text:hover{
+    box-shadow: 5px 5px black;
+    transform: translate(0, 0);
+}
+/* akhir pohon */
+/* Awal dari lanjutan-learn-more  */
+.learn-wrap{
+    padding: 50px 0 0 0 ;
+    background: rgba(208,145,91,1);
+}
+.learn-overlay{
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(2, auto);
+    height: 500px;
+}
+.learn-img1{
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+}
+.learn-img2{
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+}
+/* akhir dari lanjutan-learn-more  */
 
 /* Media Queries */
-@media only screen and (max-width:800px){
+@media only screen and (max-width:780px){
     .open-hp{
         display: block !important;
     }
