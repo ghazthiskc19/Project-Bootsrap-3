@@ -76,18 +76,26 @@ header{
 .overlay-header{
     padding-top: 150px;
 }
+/* AWAL DARI EFFECT HOVER OVERLAY  */
+.bg-dark.gg-gaming, .about-overlay, 
+.pohon-overlay, .pohon-text, 
+.learn-overlay, .learn-text-overlay{
+    box-shadow: 10px 10px black;
+    transform: translate(-5px, -5px);
+    transition: all .3s;
+}
+.bg-dark.gg-gaming:hover, .about-overlay:hover
+, .pohon-overlay:hover, .pohon-text:hover
+, .learn-overlay:hover, .learn-text-overlay:hover{
+    box-shadow: 5px 5px black;
+    transform: translate(0, 0);
+}
+/* AKHIR DARI EFFECT HOVER OVERLAY  */
 .bg-dark.gg-gaming{
     background-color: rgba(0,0,0,0.5);
     height: auto;
     padding: 20px;
     color: white;
-    box-shadow: 10px 10px black;
-    transform: translate(-5px, -5px);
-    transition: all .3s;
-}
-.bg-dark.gg-gaming:hover{
-    box-shadow: 5px 5px black;
-    transform: translate(0, 0);
 }
 .header-h1{
     font-family: ForHeading;
@@ -191,13 +199,6 @@ main{
     background: rgba(0,0,0,0.5);
     padding: 0 30px 30px 30px;
     color: white;
-    box-shadow: 10px 10px black;
-    transform: translate(-5px, -5px);
-    transition: all .3s;
-}
-.about-overlay:hover{
-    box-shadow: 5px 5px black;
-    transform: translate(0, 0);
 }
 .about-ol{
     counter-reset: ulang;
@@ -238,13 +239,6 @@ main{
     grid-template-columns: repeat(2, 1fr);
     background: rgba(0,0,0,0.5);
     padding: 30px;
-    box-shadow: 10px 10px black;
-    transform: translate(-5px, -5px);
-    transition: all .3s;
-}
-.pohon-overlay:hover{
-    box-shadow: 5px 5px black;
-    transform: translate(0, 0);
 }
 .img1, .img2, .img3{
     width: 100%;
@@ -269,18 +263,11 @@ main{
     background: rgba(0,0,0,0.5);
     margin: 15px 15px 15px 0;
     border-radius: 5px;
-    box-shadow: 10px 10px black;
-    transform: translate(-5px, -5px);
-    transition: all .3s;
-}
-.pohon-text:hover{
-    box-shadow: 5px 5px black;
-    transform: translate(0, 0);
 }
 /* akhir pohon */
 /* Awal dari lanjutan-learn-more  */
 .learn-wrap{
-    padding: 50px 0 0 0 ;
+    padding: 50px 0 ;
     background: rgba(208,145,91,1);
 }
 .learn-overlay{
@@ -288,18 +275,102 @@ main{
     grid-template-rows: repeat(2, auto);
     grid-template-columns: repeat(2, auto);
     height: 500px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 5px;
+    padding: 15px;
 }
 .learn-img1{
     grid-row: 1 / 2;
     grid-column: 1 / 2;
 }
+.learn-banjir{
+    margin: 0 0 15px 15px;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .learn-img2{
     grid-row: 2 / 3;
     grid-column: 2 / 3;
 }
+.learn-img-2 {
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 15px 0 0;
+}
+.learn-text-overlay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(0,0,0,0.5);
+}
 /* akhir dari lanjutan-learn-more  */
 
+
+/* Awal dari reboisasi Tolltip */
+.tool-wrap{
+    position: relative;
+}
+.tool-klik{
+    width: 350px;
+    background: royalblue;
+    position: absolute;
+    opacity: 0;
+    margin-bottom: 20px;
+    transition: all .3s;
+    pointer-events: none;
+    padding: 10px 15px;
+    top: -308px;
+}
+.tooltip-a{
+    color: blue;
+}
+.tool-klik::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    bottom: -11px;
+    left: 0;
+}
+.reboisasi-tooltip-img{
+    width: 100%;
+    transform: translateX(-40px);
+}
+.reboisasi-tooltip-p{
+    text-align: justify;
+    text-indent: 20px;
+    color: white;
+}
+.tooltip-a:hover > .tool-klik{
+    opacity: 1;
+    top: -288px;
+    pointer-events: all;
+}
 /* Media Queries */
+
+/* untuk tootltip reboisasi */
+/* @media only screen and (max-width:1200px){
+    .reboisasi-tooltip{
+        top: 16%;
+        left: 33%;
+    }
+} */
+
+
+
+
+
+
+
+
+
+
 @media only screen and (max-width:780px){
     .open-hp{
         display: block !important;
@@ -307,4 +378,5 @@ main{
     .carousel-item{
         display: none !important;
     }
+
 }
