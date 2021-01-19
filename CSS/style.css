@@ -58,7 +58,7 @@ a{
     position: fixed;
 }
 img.carousel-item, .open-hp{
-    width: 100%; 
+    width: 1349px; 
     height: 100vh !important;
     /* background-size: cover; */
 }
@@ -79,14 +79,17 @@ header{
 /* AWAL DARI EFFECT HOVER OVERLAY  */
 .bg-dark.gg-gaming, .about-overlay, 
 .pohon-overlay, .pohon-text, 
-.learn-overlay, .learn-text-overlay{
+.learn-overlay, .learn-text-overlay,
+.learn-banjir, .learn-img-2{
     box-shadow: 10px 10px black;
     transform: translate(-5px, -5px);
     transition: all .3s;
+    border-radius: 5px; 
 }
 .bg-dark.gg-gaming:hover, .about-overlay:hover
 , .pohon-overlay:hover, .pohon-text:hover
-, .learn-overlay:hover, .learn-text-overlay:hover{
+, .learn-overlay:hover, .learn-text-overlay:hover
+, .learn-banjir:hover, .learn-img-2:hover{
     box-shadow: 5px 5px black;
     transform: translate(0, 0);
 }
@@ -307,6 +310,9 @@ main{
     align-items: center;
     flex-direction: column;
     background: rgba(0,0,0,0.5);
+    padding: 20px;
+    max-height: 600px;
+    height: 500px;
 }
 /* akhir dari lanjutan-learn-more  */
 
@@ -352,6 +358,89 @@ main{
     top: -288px;
     pointer-events: all;
 }
+
+/* AWAL DARI GALLERY */
+.gallery{
+    background-image: url(../IMG/gallery/background/background-gallery.jpg);
+}
+
+/* Membuat gallery system */
+.img-fullscreen{
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    transition: all .6s;
+    padding: 70px 0;
+}
+.img-fullscreen:target{
+    width: auto;
+    height: auto;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.9);
+}
+.wrap-img {
+    position: relative;
+}
+.fullscreen-mode{
+    height: 75vh;
+    box-shadow: 0 0 0 10px white;
+    border-radius: 20px;
+}
+.btn-close{
+    position: absolute;
+    transform: translateX(657%);
+    top: -5%;
+    background: white;
+    padding: 10px;
+    border-radius: 50%;
+    color: black;
+}
+.btn-left i, .btn-right i{
+    padding: 10px 20px;
+    border-radius: 50px;
+    background: white;
+    color: black;
+    /* position: absolute; */
+    /* top: 45%;
+    left: 25%; */
+    transform: translatex(-30px);
+}
+.btn-left i {
+    /* left: 66%; */
+    transform: translatex(30px);
+}
+@keyframes btn-left{
+    0%{
+        opacity: 0;
+        margin-left: -20px;
+        pointer-events: none;
+    }
+    100%{
+        opacity: 1;
+        margin-left: 0;
+        pointer-events: all;
+    }
+}
+@keyframes btn-right{
+    0%{
+        opacity: 0;
+        margin-right: -20px;
+        pointer-events: none;
+    }
+    100%{
+        opacity: 1;
+        margin-right: 0;
+        pointer-events: all;
+    }
+}
+
+
+/* AKHIR DARI GALLERY */
 /* Media Queries */
 
 /* untuk tootltip reboisasi */
