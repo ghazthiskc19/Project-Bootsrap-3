@@ -57,8 +57,8 @@ a{
     z-index: var(--parallax-layer-4);
     position: fixed;
 }
-img.carousel-item, .open-hp{
-    width: 1349px; 
+img.carousel-item, .open-hp, carousel-container{
+    width: 1349px !important;
     height: 100vh !important;
     /* background-size: cover; */
 }
@@ -80,7 +80,7 @@ header{
 .bg-dark.gg-gaming, .about-overlay, 
 .pohon-overlay, .pohon-text, 
 .learn-overlay, .learn-text-overlay,
-.learn-banjir, .learn-img-2{
+.learn-banjir, .learn-kebakaran{
     box-shadow: 10px 10px black;
     transform: translate(-5px, -5px);
     transition: all .3s;
@@ -89,7 +89,7 @@ header{
 .bg-dark.gg-gaming:hover, .about-overlay:hover
 , .pohon-overlay:hover, .pohon-text:hover
 , .learn-overlay:hover, .learn-text-overlay:hover
-, .learn-banjir:hover, .learn-img-2:hover{
+{
     box-shadow: 5px 5px black;
     transform: translate(0, 0);
 }
@@ -98,8 +98,37 @@ header{
     background-color: rgba(0,0,0,0.5);
     height: auto;
     padding: 20px;
+    opacity: 0;
+    pointer-events: none;
     color: white;
+    animation: gg-gaming-animation .5s 1s forwards;
 }
+.header-p, .header-h1{
+    animation: isi-header-amination .4s 1.8s forwards;
+}
+.header-h2{
+    animation: isi-header-amination .4s 2.6s forwards;
+}
+.header-p-1{
+    animation: isi-header-amination .4s 3.1s forwards;
+}
+.header-p-2{
+    animation: isi-header-amination .4s 3.2s forwards;
+}
+.btn-border[href="#about"]{
+    animation: fade-kanan-ke-kiri .4s 3.7s forwards;
+}
+.btn-border[href="#learn_more"]{
+    animation: fade-kiri-ke-kanan .4s 3.7s forwards;
+}
+.header-p, .header-h1, .header-h2, 
+.header-p-1, .header-p-2, 
+.btn-border[href="#about"], 
+.btn-border[href="#learn_more"]{
+    opacity: 0;
+    pointer-events: none;
+}
+
 .header-h1{
     font-family: ForHeading;
     padding-bottom: 5px;
@@ -125,6 +154,7 @@ header{
     font-weight: bold;
     z-index: 999 !important;
 }
+
 .block-effect{
     content: "";
     display: block;
@@ -158,11 +188,12 @@ header{
 /* AKHIR DARI HEADER */
 /* AWAL DARI NAVBAR */
 .navbar-default{
-    background: #9E502490 !important;
+    background: #9E502490;
     font-family: 'Space Grotesk', sans-serif;
-    border-color:#9E502490 !important;
+    border-color:#9E502490;
     font-size: 20px;
     font-weight: bold;
+    transition: all .4s;
 }
 .navbar-brand, .nav.navbar-nav li a, .nav.navbar-nav.navbar-right li a{
     color: white !important;
@@ -202,6 +233,70 @@ main{
     background: rgba(0,0,0,0.5);
     padding: 0 30px 30px 30px;
     color: white;
+    opacity: 0;
+    pointer-events: none;
+}
+/* BAGIAN ANIMASI JS */
+.fade-overlay-about{
+    animation: gg-gaming-animation .5s  forwards;
+}
+.about-h2, .about-h3, .about-p-visi, .about-li{
+    opacity: 0;
+    pointer-events: none;
+}
+.about-h2-animation{
+    animation: gg-gaming-animation .4s .8s forwards;
+}
+.about-h3-animation{
+    animation: gg-gaming-animation .4s 1.8s forwards;
+}
+.about-p-animation{
+    animation: isi-header-amination .4s 2.2s forwards;
+}
+.about-p-animation-2{
+    animation: isi-header-amination .4s 2.3s forwards;
+}
+.about-li-animation:nth-child(1),
+.about-li-animation:nth-child(2),
+.about-li-animation:nth-child(3),
+.about-li-animation:nth-child(4) {
+    animation-name: isi-header-amination;
+    animation-fill-mode: forwards;
+    animation-duration: .4s;
+    /* animation-delay: calc(.2s * var(--i)) ; */
+}
+.about-li-animation:nth-child(1){
+    animation-delay: 2.6s;
+}
+.about-li-animation:nth-child(2){
+    animation-delay: 2.8s;
+}
+.about-li-animation:nth-child(3){
+    animation-delay: 3s;
+}
+.about-li-animation:nth-child(4){
+    animation-delay: 3.2s;
+}
+/* BAGIAN ANIMASI JS */
+.about-h3, .about-h2{
+    cursor: pointer;
+}
+.about-h2::after, .about-h3::after, .gallery-h2::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: white;
+    transform: scaleX(0);
+    transform-origin: 0% 50%;
+    transition: all .6s;
+}
+.about-h2::after{
+    transform: scaleX(1);
+    height: 2px;
+}
+.about-h3::after{
+    transform: scaleX(0.5);
 }
 .about-ol{
     counter-reset: ulang;
@@ -243,6 +338,31 @@ main{
     background: rgba(0,0,0,0.5);
     padding: 30px;
 }
+/* AWAL DARI ANIMASI JS */
+.pohon{
+    opacity: 0;
+    pointer-events: none;
+}
+.img1, .img2, .img3, .pohon-p{
+    opacity: 0;
+    pointer-events: none;
+}
+.pohon-animation{
+    animation: fade-kanan-kiri-overlay .4s 3.7s forwards;
+}
+.img1{
+    animation: isi-header-amination .4s 4.5s forwards;
+}
+.img2{
+    animation: isi-header-amination .4s 5.2s forwards;
+}
+.img3{
+    animation: isi-header-amination .4s 6s forwards;
+}
+.pohon-p{
+    animation: gg-gaming-animation .4s 6.8s forwards;
+}
+/* AKHIR DARI ANIMASI JS */
 .img1, .img2, .img3{
     width: 100%;
     height: 100%;
@@ -281,6 +401,8 @@ main{
     background: rgba(0,0,0,0.5);
     border-radius: 5px;
     padding: 15px;
+    opacity: 0;
+    pointer-events: none;
 }
 .learn-img1{
     grid-row: 1 / 2;
@@ -297,7 +419,7 @@ main{
     grid-row: 2 / 3;
     grid-column: 2 / 3;
 }
-.learn-img-2 {
+.learn-kebakaran {
     background: rgba(0,0,0,0.5);
     display: flex;
     justify-content: center;
@@ -313,7 +435,60 @@ main{
     padding: 20px;
     max-height: 600px;
     height: 500px;
+    opacity: 0;
+    pointer-events: none;
 }
+.learn-p-1, .learn-p-2, 
+.learn-p-3, .learn-p-4,
+.learn-img1, .learn-img2, 
+.learn-banjir, .learn-kebakaran{
+    opacity: 0;
+    pointer-events: none;
+}
+/* ANIMASI JS */
+.learn-animation{
+    animation: learn-fade-kiri-kanan .4s 3.7s forwards;
+}
+@keyframes learn-fade-kiri-kanan{
+    from{
+        opacity: 0;
+        pointer-events: none;
+        margin-left: -75px;
+    }
+    to{
+        opacity: 1;
+        pointer-events: all;
+        margin-left: 8.33333333%;
+    }
+}
+.learn-overlay-animation{
+    animation: gg-gaming-animation .5s  forwards;
+}
+.learn-p-1-animation{
+    animation: isi-header-amination .4s 4.7s forwards;
+}
+.learn-p-2-animation{
+    animation: isi-header-amination .4s 4.8s forwards;
+}
+.learn-p-3-animation{
+    animation: isi-header-amination .4s 4.9s forwards;
+}
+.learn-p-4-animation{
+    animation: isi-header-amination .4s 5s forwards;
+}
+.learn-img1-animation{
+    animation: gg-gaming-animation .5s  1.7s forwards;
+}
+.learn-img2-animation{
+    animation: gg-gaming-animation .5s  1.7s forwards;
+}
+.learn-kebakaran-animation{
+    animation: isi-header-amination .4s 2.5s forwards;
+}
+.learn-banjir-animation{
+    animation: isi-header-amination .4s 2.7s forwards;
+}
+/* ANIMASI JS */
 /* akhir dari lanjutan-learn-more  */
 
 
@@ -341,7 +516,7 @@ main{
     width: 100%;
     height: 20px;
     position: absolute;
-    bottom: -11px;
+    bottom: -18px;
     left: 0;
 }
 .reboisasi-tooltip-img{
@@ -373,24 +548,36 @@ main{
 .gallery-img{
     transition: all .3s;
 }
-.gallery-img::after{
+.gallery-h2::after{
+    width: 50%;
+}
+.img-wrap{
+    height: auto; 
+    width: auto;
+    position: relative;
+    transition: all .3s;
+}
+.img-wrap::after {
     content: "";
     display: block;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.5);
     position: absolute;
     top: 0;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
 }
 .img-xs{
     display: none;
 }
 .img-xs-gone{
-    display: block;
+    display: initial;
+}
+.gallery-a-img:hover .img-wrap::after{
+    opacity: 1;
 }
 .gallery-a-img:hover .img-section{
     opacity: 1;
-    left: 75px;
 }
 .img-section {
     position: absolute;
@@ -398,12 +585,29 @@ main{
     font-family: 'Forheading';
     font-weight: lighter;
     left: 50px;
+    font-style: italic;
+    font-weight: bold;
+    letter-spacing: 6px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
     opacity: 0;
-    transition: all .3s;
+    padding: 0 0 2px 5px;
+    transition: all .3s .15s;
 }
 .gallery-a-img:hover{
     color: white;
 }
+
+/* GALLERY JS ANIMATION */
+.gallery-img{
+    opacity: 0;
+    transform: translateY(-50px);}
+.muncul{
+    opacity: 1;
+    transform: translateY(0);
+}
+/* GALLERY JS ANIMATION */
+
 /* Membuat gallery system */
 .img-fullscreen{
     width: 0;
@@ -491,6 +695,7 @@ a.btn-close:hover ~ .fullscreen-mode{
 .footer{
     background: #E1AF40;
     padding-top: 50px;
+    position: relative;
 }
 .footer-input{
     border-top-left-radius: 20px;
@@ -547,7 +752,99 @@ a.btn-close:hover ~ .fullscreen-mode{
 .copy-h4{
     font-style: italic;
 }
+.footer-form, .footer-help, .footer-social-media{
+    opacity: 0;
+    pointer-events: none;
+}
+/* AANIMASI JS */
+.footer-form-animation{
+    animation: fade-atas-bawah .4s forwards;
+}
+.footer-help-animation{
+    animation: fade-atas-bawah .4s .6s forwards;
+}
+.footer-social-media-animation{
+    animation: fade-atas-bawah .4s 1.2s forwards;
+}
+@keyframes fade-atas-bawah {
+    0%{
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-100px);  
+    }
+    100%{
+        opacity: 1;
+        pointer-events: all;
+        transform: translateY(0);
+    }
+}
+/* AANIMASI JS */
 /* AKHIR DARI FOOTER */
+/* AWAL ANIMASI UNTUK BAGIAN HEADER */
+@keyframes gg-gaming-animation{
+    0%{
+        margin-left: -75px;
+        opacity: 0;
+        pointer-events: none;
+    }
+    100%{
+        margin-left: 0;
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+@keyframes fade-kanan-kiri-overlay{
+    0%{
+        transform: translateX(75px);
+        opacity: 0;
+        pointer-events: none;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+/* AKHIR ANIMASI UNTUK BAGIAN HEADER */
+
+/* Bagian awal dari animsi buat header */
+@keyframes isi-header-amination{
+    0%{
+        transform: translateY(-30px);
+        opacity: 0;
+        pointer-events: none;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+@keyframes fade-kanan-ke-kiri{
+    0%{
+        transform: translateX(40px);
+        opacity: 0;
+        pointer-events: none;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+@keyframes fade-kiri-ke-kanan{
+    0%{
+        transform: translateX(-40px);
+        opacity: 0;
+        pointer-events: none;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+/* Bagian akhir dari animsi buat header */
 
 @keyframes img-hero{
     0%{
@@ -597,20 +894,48 @@ a.btn-close:hover ~ .fullscreen-mode{
 /* Media Queries */
 
 /* untuk tootltip reboisasi */
-/* @media only screen and (max-width:1200px){
-    .reboisasi-tooltip{
-        top: 16%;
-        left: 33%;
+@media only screen and (max-width:440px){
+    .btn-border{
+        padding: 13px 28px;
     }
-} */
-
-
+    .overlay-header{
+        padding-top: 80px;
+    }
+}
+@media only screen and (max-width:410px){
+    .img-rensponsive[alt="orchid"], .img-rensponsive[alt="geranium"]{
+        height: 60vh;
+    }
+    .learn-banjir, .learn-kebakaran{
+        font-size: 16px;
+    }
+}
 
 @media only screen and (max-width:768px){
     .img-xs{
-        display: block;
+        display: initial;
     }
     .img-xs-gone{
         display: none;
     }
+}
+@media only screen and (max-width: 992px){ 
+/* Ini ukuran col-md kalau ada element col-md yang mau dikasih style sendiri di sini aja*/
+    .footer-help{
+        text-align: center;
+    }
+    .footer-social-media{
+        text-align: center;
+    }
+    .pohon{
+        margin-top: 50px;
+    }
+    .learn-text-overlay{
+        margin: 50px 0 0 0 !important;
+    }
+    /* .img-section{
+        left: 35px;
+        font-size: 10px;
+    } */
+
 }
