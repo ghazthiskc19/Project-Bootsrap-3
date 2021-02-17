@@ -79,8 +79,7 @@ header{
 /* AWAL DARI EFFECT HOVER OVERLAY  */
 .bg-dark.gg-gaming, .about-overlay, 
 .pohon-overlay, .pohon-text, 
-.learn-overlay, .learn-text-overlay,
-.learn-banjir, .learn-kebakaran{
+.learn-overlay, .learn-text-overlay,{
     box-shadow: 10px 10px black;
     transform: translate(-5px, -5px);
     transition: all .3s;

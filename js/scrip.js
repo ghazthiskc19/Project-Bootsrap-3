@@ -49,7 +49,7 @@ $(window).scroll(function(){
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+  if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
     document.getElementById("navbar").style.background = "rgba(158, 80, 36, 1)";
     document.getElementById("navbar").style.padding = " 10px 5px";
     document.getElementById("navbar").style.borderColor = "rgba(158, 80, 36, 1) ";
