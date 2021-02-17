@@ -79,7 +79,7 @@ header{
 /* AWAL DARI EFFECT HOVER OVERLAY  */
 .bg-dark.gg-gaming, .about-overlay, 
 .pohon-overlay, .pohon-text, 
-.learn-overlay, .learn-text-overlay,{
+.learn-overlay, .learn-text-overlay{
     box-shadow: 10px 10px black;
     transform: translate(-5px, -5px);
     transition: all .3s;
@@ -187,9 +187,9 @@ header{
 /* AKHIR DARI HEADER */
 /* AWAL DARI NAVBAR */
 .navbar-default{
-    background: #9E502490;
+    background: rgba(0,0,0,0);
     font-family: 'Space Grotesk', sans-serif;
-    border-color:#9E502490;
+    border-color:rgba(0,0,0,0);;
     font-size: 20px;
     font-weight: bold;
     transition: all .4s;
